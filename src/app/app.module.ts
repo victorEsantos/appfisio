@@ -8,13 +8,15 @@ import { ListarTodosPacientesCompComponent } from './listar-todos-pacientes-comp
 import {HttpClientModule} from "@angular/common/http";
 import { CadastrarPacientesCompComponent } from './cadastrar-pacientes-comp/cadastrar-pacientes-comp.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListarTodosPacientesCompComponent,
-    CadastrarPacientesCompComponent
+    CadastrarPacientesCompComponent,
+    FooterComponent
   ],
     imports: [
         BrowserModule,
