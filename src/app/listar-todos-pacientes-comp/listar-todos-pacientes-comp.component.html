@@ -1,17 +1,27 @@
-
 <h1>Esses são nossos pacientes: </h1>
 
-<div class="card d-inline-block m-4" style="width: 18rem;" *ngFor="let paciente of pacientes">
-  <img src="https://engenharia360.com/wp-content/uploads/2019/05/esta-pessoa-nao-existe-engenharia360-4.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{paciente.nome + " " + paciente.sobrenome}}</h5>
-    <p class="card-text">CPF: {{paciente.cpf}}</p>
-    <p class="card-text">RG: {{paciente.rg}}</p>
-    <p class="card-text">Email: {{paciente.email}}</p>
-    <p class="card-text">Celular: {{paciente.celular}}</p>
-    <p class="card-text">Profissão: {{paciente.profissao}}</p>
+<button type="button" class="float-end col-lg-3 btn btn-success" (click)="novoPaciente()">+ Novo Paciente</button>
 
-    <a href="#" class="btn btn-primary">Editar</a>
-    <a href="#" class="btn btn-danger">Excluir</a>
+<form class="d-flex col-lg-6">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
+
+<div class="row justify-content-center">
+  <div class="card m-3" style="width: 18rem;" *ngFor="let paciente of pacientes">
+    <img src="https://engenharia360.com/wp-content/uploads/2019/05/esta-pessoa-nao-existe-engenharia360-4.png"
+         class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{paciente.nome + " " + paciente.sobrenome}}</h5>
+      <p class="card-text">CPF: {{paciente.cpf}}</p>
+      <p class="card-text">RG: {{paciente.rg}}</p>
+      <p class="card-text">Email: {{paciente.email}}</p>
+      <p class="card-text">Celular: {{paciente.celular}}</p>
+      <p class="card-text">Profissão: {{paciente.profissao}}</p>
+
+      <a href="#" class="btn btn-primary">Editar</a>
+      <a href="#" class="btn btn-danger">Excluir</a>
+    </div>
   </div>
 </div>

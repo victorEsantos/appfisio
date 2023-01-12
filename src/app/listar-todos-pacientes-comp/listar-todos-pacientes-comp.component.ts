@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PacienteService} from "../paciente.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-listar-todos-pacientes-comp',
@@ -10,7 +11,7 @@ export class ListarTodosPacientesCompComponent implements OnInit{
 
   pacientes: any[] = [];
 
-  constructor(private pacienteService: PacienteService) {
+  constructor(private pacienteService: PacienteService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,5 +20,9 @@ export class ListarTodosPacientesCompComponent implements OnInit{
 
       console.log(">>>>>", data.content)
     })
+  }
+
+  novoPaciente() {
+    this.router.navigate(['pacientes/novo'])
   }
 }

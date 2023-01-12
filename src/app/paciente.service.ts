@@ -27,4 +27,7 @@ export class PacienteService {
     return this.httpClient.get<any>(url).pipe(take(1));
   }
 
+  public create(paciente: any) {
+    return this.httpClient.post(this.apiUrl, paciente).pipe(take(1));
+  }
 }
