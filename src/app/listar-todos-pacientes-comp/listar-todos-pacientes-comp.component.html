@@ -7,11 +7,48 @@
   <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 
+<table class="table table-dark mt-5">
+  <thead>
+  <tr>
+    <th scope="col" class="col-lg-1">#</th>
+    <th scope="col" class="col-lg-2">Nome</th>
+    <th scope="col" class="col-lg-2">Cpf</th>
+    <th scope="col" class="col-lg-1">Celular</th>
+    <th scope="col" class="col-lg-3">Ação</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let paciente of pacientes; index as i">
+    <th scope="row">{{i}}</th>
+    <td>{{paciente.nome}}</td>
+    <td>{{paciente.cpf}}</td>
+    <td>{{paciente.celular}}</td>
+    <td>
+
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+          </svg>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+          <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+        </ul>
+      </div>
+
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
 
 <div class="row justify-content-center">
   <div class="card m-3" style="width: 18rem;" *ngFor="let paciente of pacientes">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUSgwAsVlsZkE0yBCwb0ce6_sec_rqjM8F4OTzx4Crb1L4kYw0oc_l0Mec2BzFaxId0AQ&usqp=CAU"
-         class="card-img-top" alt="...">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUSgwAsVlsZkE0yBCwb0ce6_sec_rqjM8F4OTzx4Crb1L4kYw0oc_l0Mec2BzFaxId0AQ&usqp=CAU"
+      class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{paciente.nome + " " + paciente.sobrenome}}</h5>
       <p class="card-text">CPF: {{paciente.cpf}}</p>
