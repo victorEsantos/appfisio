@@ -25,4 +25,12 @@ export class ListarTodosPacientesCompComponent implements OnInit{
   novoPaciente() {
     this.router.navigate(['pacientes/novo'])
   }
+
+  vizualizarPaciente(id: string) {
+    this.router.navigate(['pacientes', id])
+  }
+
+  editarPaciente(id: string) {
+    this.router.navigate(['pacientes/editar', id])
+  }
 }

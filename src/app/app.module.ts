@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { CadastrarPacientesCompComponent } from './cadastrar-pacientes-comp/cadastrar-pacientes-comp.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { FooterComponent } from './footer/footer.component';
+import { EditarPacienteComponent } from './editar-paciente/editar-paciente.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     ListarTodosPacientesCompComponent,
     CadastrarPacientesCompComponent,
-    FooterComponent
+    FooterComponent,
+    EditarPacienteComponent
   ],
     imports: [
         BrowserModule,
