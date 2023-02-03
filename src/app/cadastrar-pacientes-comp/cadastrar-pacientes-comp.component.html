@@ -3,67 +3,105 @@
   <div class="form-group">
 
     <div class="row">
-      <div class="mb-3 col-lg-6">
+      <div class="mb-3 col-lg-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" formControlName="nome"
-               [ngClass]="{'is-invalid': submitted && hasError('nome')}">
+        <input type="text" class="form-control" id="nome" formControlName="nome">
       </div>
 
-      <div class="mb-3 col-lg-6">
-        <label for="sobrenome" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="sobrenome" formControlName="sobrenome"
-               [ngClass]="{'is-invalid': submitted && hasError('sobrenome')}">
+      <div class="mb-3 col-lg-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <select class="form-select" id="sexo" formControlName="sexo">
+          <option selected>Selecione</option>
+          <option value="MASCULINO">Masculino</option>
+          <option value="FEMININO">Feminino</option>
+          <option value="Outro">Outro</option>
+        </select>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-lg-6 mb-3">
+
+      <div class="mb-3 col-lg-3">
         <label for="cpf" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="cpf" formControlName="cpf"
-               [ngClass]="{'is-invalid': submitted && hasError('cpf')}">
+        <input type="text" class="form-control" id="cpf" formControlName="cpf">
       </div>
 
-      <div class="col-lg-6 mb-3">
+      <div class="mb-3 col-lg-3">
         <label for="rg" class="form-label">RG</label>
-        <input type="text" class="form-control" id="rg" formControlName="rg"
-               [ngClass]="{'is-invalid': submitted && hasError('rg')}">
+        <input type="text" class="form-control" id="rg" formControlName="rg">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="estadoCivil" class="form-label">Estado civil</label>
+        <input type="text" class="form-control" id="estadoCivil" formControlName="estadoCivil">
+      </div>
+
+
+      <div class="mb-3 col-lg-3">
+        <label for="profissao" class="form-label">Profissao</label>
+        <input type="text" class="form-control" id="profissao" formControlName="profissao">
+      </div>
+
+
+      <div class="mb-3 col-lg-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" formControlName="email">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="telefoneFixo" class="form-label">Tel. Fixo</label>
+        <input type="text" class="form-control" id="telefoneFixo" formControlName="telefoneFixo">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="celular" class="form-label">Celular</label>
+        <input type="text" class="form-control" id="celular" formControlName="celular">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="convenio" class="form-label">Convenio</label>
+        <input type="text" class="form-control" id="convenio" formControlName="convenio">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="numeroCns" class="form-label">Numero CNS</label>
+        <input type="text" class="form-control" id="numeroCns" formControlName="numeroCns">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" formControlName="cep">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="estado" class="form-label">Estado</label>
+        <input type="text" class="form-control" id="estado" formControlName="estado">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade" formControlName="cidade">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="numero" class="form-label">Número</label>
+        <input type="text" class="form-control" id="numero" formControlName="numero">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="bairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="bairro" formControlName="bairro">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="complemento" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="complemento" formControlName="complemento">
+      </div>
+
+      <div class="mb-3 col-lg-3">
+        <label for="dataNascimento" class="form-label">Data nascimento</label>
+        <input id="dataNascimento" class="form-control" type="date"/>
       </div>
 
     </div>
-
-    <div class="mb-3">
-      <label for="email">email</label>
-      <input type="text" class="form-control" id="email" formControlName="email"
-             [ngClass]="{'is-invalid': submitted && hasError('email')}">
-      <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais ninguém.</small>
-    </div>
-
-    <div class="row mb-3">
-      <div class="col-lg-6 col-md-12 mb-3">
-        <label>Celular</label>
-        <input type="text" formControlName="celular" class="form-control"
-               [ngClass]="{ 'is-invalid': submitted && hasError('celular') }"/>
-      </div>
-      <div class="col-lg-6 col-md-12 mb-3">
-        <label>Telefone</label>
-        <input type="text" formControlName="telefone" class="form-control"
-               [ngClass]="{ 'is-invalid': submitted && hasError('telefone') }"/>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-6 col-md-12 mb-3">
-        <label>Profissão</label>
-        <input type="text" formControlName="profissao" class="form-control"
-               [ngClass]="{ 'is-invalid': submitted && hasError('profissao') }"/>
-      </div>
-
-      <div class="col-lg-6">
-        <label for="nascimento">Data nascimento</label>
-        <input id="nascimento" class="form-control" type="date" />
-      </div>
-    </div>
-
 
     <div class="mt-4">
       <button class="btn btn-primary btn-block col-12" type="submit" (click)="onSubmit()">Salvar</button>

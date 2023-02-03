@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "../environments/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, take} from "rxjs";
+import {Paciente} from "./models/paciente-model";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class PacienteService {
       url = url + "?nome=" + nome;
     }
     return this.httpClient.get<any>(url).pipe(take(1));
+  }
+
+  public getPacienteById(id: string): Observable<Paciente> {
+    return this.httpClient.get<any>(`${this.apiUrl}/${id}`).pipe(take(1));
   }
 
   public create(paciente: any) {

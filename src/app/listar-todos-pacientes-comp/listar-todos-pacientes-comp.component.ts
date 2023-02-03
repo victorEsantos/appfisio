@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PacienteService} from "../paciente.service";
 import {Router} from "@angular/router";
+import {Paciente} from "../models/paciente-model";
 
 @Component({
   selector: 'app-listar-todos-pacientes-comp',
@@ -9,16 +10,15 @@ import {Router} from "@angular/router";
 })
 export class ListarTodosPacientesCompComponent implements OnInit{
 
-  pacientes: any[] = [];
+  pacientes: Paciente[] = [];
 
   constructor(private pacienteService: PacienteService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.pacienteService.getAllPacientes().subscribe(data => {
+    this.pacienteService.getAllPacientes().subscribe(data  => {
+      console.log(data.content);
       this.pacientes = data.content;
-
-      console.log(">>>>>", data.content)
     })
   }
 
