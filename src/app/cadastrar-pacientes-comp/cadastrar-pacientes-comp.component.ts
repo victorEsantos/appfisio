@@ -12,33 +12,34 @@ export class CadastrarPacientesCompComponent implements OnInit {
 
   form: FormGroup = this.fb.group({
     nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
-    sobrenome:[],
-    cpf:[],
-    rg:[],
-    celular:[],
-    telefone:[],
-    profissao:[],
-    email: [null, [Validators.required, Validators.email]]
+    nascimento: [],
+    sexo: [],
+    cpf: [],
+    rg: [],
+    estadoCivil: [],
+    profissao: [],
+    email: [],
+    telefoneFixo: [],
+    celular: [],
+    convenio: [],
+    numeroCns: [],
+    endereco: this.fb.group({
+      cep: [],
+      estado: [],
+      cidade: [],
+      numero: [],
+      bairro: [],
+      complemento: []
+    })
   });
 
-  submitted: Boolean = false;
+  submitted: boolean = false;
 
   constructor(private fb: FormBuilder, private service: PacienteService,
               private location: Location) {
   }
 
   ngOnInit(): void {
-
-    this.form = this.fb.group({
-      nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
-      sobrenome:[],
-      cpf:[],
-      rg:[],
-      celular:[],
-      telefone:[],
-      profissao:[],
-      email: [null, [Validators.required, Validators.email]],
-    });
   }
 
   onSubmit(): void {
@@ -47,6 +48,7 @@ export class CadastrarPacientesCompComponent implements OnInit {
     console.log(this.form.value)
 
     if (this.form.valid) {
+      console.log("criando paciente")
       this.service.create(this.form.value).subscribe(
         () => {
           // this.modal.showAlertSuccess("Criado com sucesso!");

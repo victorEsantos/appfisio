@@ -35,4 +35,8 @@ export class PacienteService {
   public create(paciente: any) {
     return this.httpClient.post(this.apiUrl, paciente).pipe(take(1));
   }
+
+  public update(paciente: any, id: string) {
+    return this.httpClient.put(`${this.apiUrl}/${id}/alterar`, paciente).pipe(take(1));
+  }
 }

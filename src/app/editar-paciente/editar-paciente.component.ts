@@ -16,7 +16,7 @@ export class EditarPacienteComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
-  submitted: Boolean = false;
+  submitted: boolean = false;
 
   form: FormGroup = this.fb.group({
     nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(250)]],
@@ -31,12 +31,14 @@ export class EditarPacienteComponent implements OnInit {
     celular: [],
     convenio: [],
     numeroCns: [],
-    cep: [],
-    estado: [],
-    cidade: [],
-    numero: [],
-    bairro: [],
-    complemento: []
+    endereco: this.fb.group({
+      cep: [],
+      estado: [],
+      cidade: [],
+      numero: [],
+      bairro: [],
+      complemento: []
+    })
   });
 
   onSubmit(): void {
@@ -44,8 +46,10 @@ export class EditarPacienteComponent implements OnInit {
 
     console.log(this.form.value)
 
+    const id = this.location.path().split("/")[3];
+
     if (this.form.valid) {
-      this.service.create(this.form.value).subscribe(
+      this.service.update(this.form.value, id).subscribe(
         () => {
           // this.modal.showAlertSuccess("Criado com sucesso!");
 
@@ -70,6 +74,7 @@ export class EditarPacienteComponent implements OnInit {
         this.service.getPacienteById(id).subscribe(
           (paciente) => {
             this.form.patchValue(paciente);
+            this.form.patchValue({convenio: paciente.convenio?.nome});
             console.log(">>>", paciente);
           }
         )
