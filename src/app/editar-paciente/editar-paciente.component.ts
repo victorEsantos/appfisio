@@ -73,6 +73,10 @@ export class EditarPacienteComponent implements OnInit {
 
   ngOnInit() {
 
+    if(this.isVisualizar()) {
+      this.form.disable();
+    }
+
     this.route.params.subscribe(
       (params: any) => {
         const id = params['id'];
@@ -86,7 +90,10 @@ export class EditarPacienteComponent implements OnInit {
       }
     )
 
+  }
 
+  public isVisualizar(): boolean {
+    return this.location.path().includes("visualizar");
   }
 
   hasError(field: string) {

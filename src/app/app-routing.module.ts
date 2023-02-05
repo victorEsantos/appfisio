@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'pacientes/editar/:id',
     component: EditarPacienteComponent
+  },
+  {
+    path: 'pacientes/visualizar/:id',
+    component: EditarPacienteComponent
   }
 ];
 
