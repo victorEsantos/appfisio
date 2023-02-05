@@ -2,71 +2,124 @@
 <form class="needs-validation" novalidate [formGroup]="form">
   <div class="form-group">
 
-    <div class="row">
-      <div class="mb-3 col-lg-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" formControlName="nome">
+
+    <fieldset class="form-group border p-3">
+      <div class="row">
+        <legend>Dados Principais</legend>
+
+        <div class="mb-3 col-lg-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="sexo" class="form-label">Sexo</label>
+          <select class="form-select" id="sexo" formControlName="sexo">
+            <option selected>Selecione</option>
+            <option value="MASCULINO">Masculino</option>
+            <option value="FEMININO">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+
+
+        <div class="mb-3 col-lg-3">
+          <label for="cpf" class="form-label">CPF</label>
+          <input type="text" class="form-control" id="cpf" formControlName="cpf">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="rg" class="form-label">RG</label>
+          <input type="text" class="form-control" id="rg" formControlName="rg">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="estadoCivil" class="form-label">Estado civil</label>
+          <input type="text" class="form-control" id="estadoCivil" formControlName="estadoCivil">
+        </div>
+
+
+        <div class="mb-3 col-lg-3">
+          <label for="profissao" class="form-label">Profissao</label>
+          <input type="text" class="form-control" id="profissao" formControlName="profissao">
+        </div>
+
+
+        <div class="mb-3 col-lg-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="telefoneFixo" class="form-label">Tel. Fixo</label>
+          <input type="text" class="form-control" id="telefoneFixo" formControlName="telefoneFixo">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="celular" class="form-label">Celular</label>
+          <input type="text" class="form-control" id="celular" formControlName="celular">
+        </div>
+
+        <div class="mb-3 col-lg-3">
+          <label for="dataNascimento" class="form-label">Data nascimento</label>
+          <input id="dataNascimento" class="form-control" type="date" formControlName="nascimento"
+                 formArrayName="nascimento"/>
+        </div>
+
       </div>
 
-      <div class="mb-3 col-lg-3">
-        <label for="sexo" class="form-label">Sexo</label>
-        <select class="form-select" id="sexo" formControlName="sexo">
-          <option selected>Selecione</option>
-          <option value="MASCULINO">Masculino</option>
-          <option value="FEMININO">Feminino</option>
-          <option value="Outro">Outro</option>
-        </select>
+
+    </fieldset>
+
+
+    <fieldset class="form-group border p-3 mt-4">
+      <legend class="w-auto">Convenio</legend>
+      <div formGroupName="convenio" class="row">
+        <div class="mb-3 col-lg-3">
+          <label for="nomeCarteirinha" class="form-label">Nome na Carteirinha</label>
+          <input type="text" class="form-control" id="nomeCarteirinha" formControlName="nome">
+        </div>
+
+        <div class="mb-3 col-lg-2">
+          <label for="convenio" class="form-label">Convenio</label>
+          <select class="form-select" id="convenio" formControlName="convenio">
+            <option selected>Selecione</option>
+            <option value="PARTICULAR">Particular</option>
+            <option value="BRADESCO">Bradesco</option>
+            <option value="CASSI">Cassi</option>
+            <option value="MEDISERVICE">Mediservice</option>
+            <option value="SAUDE_CAIXA">Saúde Caiza</option>
+            <option value="SC_SAUDE">SC Saúde</option>
+            <option value="UNIMED">Unimed</option>
+            <option value="LIFE_DAY">Life Day</option>
+            <option value="SAUDE_JOINVILLE">Saúde Joinville</option>
+            <option value="PARANA_CLINICAS">Paraná Clinicass</option>
+          </select>
+        </div>
+
+        <div class="mb-3 col-lg-2">
+          <label for="numeroConvenio" class="form-label">Numero do Convenio</label>
+          <input type="text" class="form-control" id="numeroConvenio" formControlName="numero">
+        </div>
+
+        <div class="mb-3 col-lg-2">
+          <label for="numeroCns" class="form-label">Numero do CNS</label>
+          <input type="text" class="form-control" id="numeroCns" formControlName="numeroCns">
+        </div>
+
+        <div class="mb-3 col-lg-2">
+          <label for="validade" class="form-label">Validade</label>
+          <input id="validade" class="form-control" type="date" formControlName="validade"
+                 formArrayName="validade"/>
+        </div>
+
       </div>
+    </fieldset>
 
 
-      <div class="mb-3 col-lg-3">
-        <label for="cpf" class="form-label">CPF</label>
-        <input type="text" class="form-control" id="cpf" formControlName="cpf">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="rg" class="form-label">RG</label>
-        <input type="text" class="form-control" id="rg" formControlName="rg">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="estadoCivil" class="form-label">Estado civil</label>
-        <input type="text" class="form-control" id="estadoCivil" formControlName="estadoCivil">
-      </div>
-
-
-      <div class="mb-3 col-lg-3">
-        <label for="profissao" class="form-label">Profissao</label>
-        <input type="text" class="form-control" id="profissao" formControlName="profissao">
-      </div>
-
-
-      <div class="mb-3 col-lg-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="text" class="form-control" id="email" formControlName="email">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="telefoneFixo" class="form-label">Tel. Fixo</label>
-        <input type="text" class="form-control" id="telefoneFixo" formControlName="telefoneFixo">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="celular" class="form-label">Celular</label>
-        <input type="text" class="form-control" id="celular" formControlName="celular">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="convenio" class="form-label">Convenio</label>
-        <input type="text" class="form-control" id="convenio" formControlName="convenio">
-      </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="numeroCns" class="form-label">Numero CNS</label>
-        <input type="text" class="form-control" id="numeroCns" formControlName="numeroCns">
-      </div>
-
-      <div formGroupName="endereco">
+    <fieldset class="form-group border p-3 mt-4">
+      <legend>Endereço</legend>
+      <div formGroupName="endereco" class="row">
 
         <div class="mb-3 col-lg-3">
           <label for="cep" class="form-label">CEP</label>
@@ -98,18 +151,13 @@
           <input type="text" class="form-control" id="complemento" formControlName="complemento">
         </div>
       </div>
-
-      <div class="mb-3 col-lg-3">
-        <label for="dataNascimento" class="form-label">Data nascimento</label>
-        <input id="dataNascimento" class="form-control" type="date"/>
-      </div>
-
-    </div>
-
-    <div class="mt-4">
-      <button class="btn btn-primary btn-block col-12" type="submit" (click)="onSubmit()">Salvar</button>
-    </div>
+    </fieldset>
 
   </div>
+
+  <div class="mt-4">
+    <button class="btn btn-primary btn-block col-12" type="submit" (click)="onSubmit()">Salvar</button>
+  </div>
+
 
 </form>

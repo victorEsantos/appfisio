@@ -29,8 +29,13 @@ export class EditarPacienteComponent implements OnInit {
     email: [],
     telefoneFixo: [],
     celular: [],
-    convenio: [],
-    numeroCns: [],
+    convenio: this.fb.group({
+      nome: [],
+      numero: [],
+      validade: [],
+      convenio: [],
+      numeroCns: []
+    }),
     endereco: this.fb.group({
       cep: [],
       estado: [],
