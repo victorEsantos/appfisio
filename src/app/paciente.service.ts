@@ -39,4 +39,8 @@ export class PacienteService {
   public update(paciente: any, id: string) {
     return this.httpClient.put(`${this.apiUrl}/${id}/alterar`, paciente).pipe(take(1));
   }
+
+  deletePaciente(id: string) {
+    return this.httpClient.delete(`${this.apiUrl}/${id}`).pipe(take(1));
+  }
 }

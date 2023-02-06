@@ -33,4 +33,11 @@ export class ListarTodosPacientesCompComponent implements OnInit{
   editarPaciente(id: string) {
     this.router.navigate(['pacientes/editar', id])
   }
+
+  excluirPaciente(id: string) {
+    this.pacienteService.deletePaciente(id).subscribe(() => {
+      this.pacientes = this.pacientes.filter(paciente => paciente.id !== id);
+    })
+
+  }
 }
