@@ -10,6 +10,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./editar-paciente.component.css']
 })
 export class EditarPacienteComponent implements OnInit {
+  public avaliacoes: any;
+  public nome: string = " ";
 
   constructor(private fb: FormBuilder, private service: PacienteService,
               private location: Location,
@@ -49,8 +51,6 @@ export class EditarPacienteComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
 
-    console.log(this.form.value)
-
     const id = this.location.path().split("/")[3];
 
     if (this.form.valid) {
@@ -73,7 +73,7 @@ export class EditarPacienteComponent implements OnInit {
 
   ngOnInit() {
 
-    if(this.isVisualizar()) {
+    if (this.isVisualizar()) {
       this.form.disable();
     }
 
@@ -84,9 +84,14 @@ export class EditarPacienteComponent implements OnInit {
           (paciente) => {
             this.form.patchValue(paciente);
             this.form.patchValue({convenio: paciente.convenio?.nome});
-            console.log(">>>", paciente);
+            this.nome = paciente.nome;
           }
-        )
+        );
+
+        this.service.getPacienteAvaliacoes(id).subscribe(data => {
+          this.avaliacoes = data.content;
+        })
+
       }
     )
 
@@ -99,5 +104,12 @@ export class EditarPacienteComponent implements OnInit {
   hasError(field: string) {
     return this.form.get(field)?.errors
 
+  }
+
+  truncateString(str: string, length: number): string {
+    if (str.length > length) {
+      return str.substring(0, length) + "...";
+    }
+    return str;
   }
 }

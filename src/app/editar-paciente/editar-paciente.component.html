@@ -155,9 +155,44 @@
 
   </div>
 
-  <div class="mt-4">
+  <div class="mt-4" *ngIf="!isVisualizar()">
     <button class="btn btn-primary btn-block col-12" type="submit" (click)="onSubmit()">Salvar</button>
   </div>
 
 
 </form>
+
+<h2 class="mt-4">Avaliações de {{nome.split(" ")[0]}}</h2>
+
+<table class="table table-light mt-4 text-center">
+  <thead>
+  <tr>
+    <th scope="col" class="col-lg-2">Criado em</th>
+    <th scope="col" class="col-lg-2">Queixa</th>
+    <th scope="col" class="col-lg-2">Tratamento</th>
+    <th scope="col" class="col-lg-2">Avaliação</th>
+    <th scope="col" class="col-lg-2">Ação</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let avaliacao of avaliacoes">
+    <th scope="row">{{avaliacao.criadoEm}}</th>
+    <td>{{truncateString(avaliacao.queixa, 20)}}</td>
+    <td>{{truncateString(avaliacao.tratamento,20)}}</td>
+    <td>{{truncateString(avaliacao.avaliacao,20)}}</td>
+    <td>
+
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-dark">Visualizar</button>
+        <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-success" href="#">Avaliar</a></li>
+        </ul>
+      </div>
+
+    </td>
+
+  </tr>
+  </tbody>
+</table>

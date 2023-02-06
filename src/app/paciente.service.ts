@@ -43,4 +43,8 @@ export class PacienteService {
   deletePaciente(id: string) {
     return this.httpClient.delete(`${this.apiUrl}/${id}`).pipe(take(1));
   }
+
+  getPacienteAvaliacoes(id: string): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/${id}/avaliacoes`).pipe(take(1));
+  }
 }
