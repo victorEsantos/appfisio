@@ -10,6 +10,8 @@ import { CadastrarPacientesCompComponent } from './cadastrar-pacientes-comp/cada
 import {ReactiveFormsModule} from "@angular/forms";
 import { FooterComponent } from './footer/footer.component';
 import { EditarPacienteComponent } from './editar-paciente/editar-paciente.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { EditarPacienteComponent } from './editar-paciente/editar-paciente.compo
     FooterComponent,
     EditarPacienteComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatStepperModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
