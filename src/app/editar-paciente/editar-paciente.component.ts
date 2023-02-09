@@ -48,7 +48,7 @@ export class EditarPacienteComponent implements OnInit {
     })
   });
 
-  onSubmit(): void {
+  onSubmit(isLastStep?: boolean): void {
     this.submitted = true;
 
     const id = this.location.path().split("/")[3];
@@ -56,11 +56,10 @@ export class EditarPacienteComponent implements OnInit {
     if (this.form.valid) {
       this.service.update(this.form.value, id).subscribe(
         () => {
-          // this.modal.showAlertSuccess("Criado com sucesso!");
-
           console.log("Criado com sucesso!")
-
-          this.location.back();
+          if(isLastStep){
+            this.location.back();
+          }
         },
         () => {
           // this.modal.showAlertDanger("Erro ao criar, tente novamente")
