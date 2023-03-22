@@ -1,27 +1,46 @@
-# Appfisio
+# Sistema de Gerenciamento de Clínica de Fisioterapia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+O sistema contém diversos cadastros e listagens de dados agrupados em linhas dentro de tabelas. Os dados são agrupados em conjuntos que formam informações, estas são:
 
-## Development server
+→ Paciente - presente em todo o sistema.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+→ Funcionário - em grande maioria fisioterapeuta.
 
-## Code scaffolding
+→ Procedimentos - musculação, pilates, fortalecimentos (…).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+→ Avaliação - onde é avaliado a condição atual do paciente bem como sua dores referente a lesão.
 
-## Build
+→ Evolução - somente existe diante de uma avaliação.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisitos funcionais e não funcionais
 
-## Running unit tests
+### Requisitos funcionais
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+⇒ RF_001: Deve ser possível cadastrar funcionários.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+⇒ RF_002: Deve ser possível cadastrar pacientes.
 
-## Further help
+⇒ RF_003: Os sistema deve conter listagens para todos os tipos de cadastro associados ao paciente e funcionários.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+⇒ RF_004: Cadastro das avaliações diante da listagem e seleção de um paciente.
+
+⇒ RF_005: Cadastro das evoluções diante da listagem e seleção de uma avaliação relacionada a um paciente.
+
+⇒ RF_006: Associações entre avaliações e evoluções com o funcionário e paciente da operação.
+
+⇒ RF_007: Roles para separar acessos no sistema entre operantes do sistema.
+
+⇒ RF_008: Login e Cadastro de usuário do sistema.
+
+⇒ RF_009: Validação na autenticação com token de 18 horas 
+
+
+
+### Requisitos não funcionais
+
+⇒ RNF_001: Cadastro, listagem ou vínculo de procedimentos de serviço.
+
+⇒ RNF_002: Validação externa com identificação de terceiros referente ao convênio.
+
+⇒ RNF_003: Somatória de todos os cliente ativos, avaliações e evoluções.
