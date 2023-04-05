@@ -36,6 +36,11 @@ Neste projeto, temos como objetivo desenvolver a “Nora” com o algoritimo de 
 
 ![DRE -_  CRV - Centro Integrado de Fisioterapia.drawio.png](https://github.com/victorEsantos/appfisio/blob/main/DRE%20-_%20%20CRV%20-%20Centro%20Integrado%20de%20Fisioterapia.drawio.png?raw=true)
 
+# Pipeline
+
+https://imgur.com/a/dk3sTfo
+
+
 # Tecnologias utilizadas
 
 Para popular a base de dados para o projeto principal temos outros dois projetos auxiliares
