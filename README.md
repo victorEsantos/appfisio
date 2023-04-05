@@ -1,46 +1,65 @@
 # Sistema de Gerenciamento de Clínica de Fisioterapia
 
-O sistema contém diversos cadastros e listagens de dados agrupados em linhas dentro de tabelas. Os dados são agrupados em conjuntos que formam informações, estas são:
+# ****1 Introdução****
 
-→ Paciente - presente em todo o sistema.
+**1.1 Objetivo deste documento**
 
-→ Funcionário - em grande maioria fisioterapeuta.
+Neste documento são apresentado a especificação e evidências de implementação de uma “Inteligência Artificial Assistente” nomeada como **“Nora”**, esta classifica os melhores procedimentos aplicados em pacientes diante de todos os resultados registrados em banco de dados, retornando o procedimento mais eficaz a ser utilizado nas sessões de tratamento do paciente avaliado. 
 
-→ Procedimentos - musculação, pilates, fortalecimentos (…).
+Neste projeto, temos como objetivo desenvolver a “Nora” com o algoritimo de rede neural Multi-Layer, aplicando o treinamento backpropagation. 
 
-→ Avaliação - onde é avaliado a condição atual do paciente bem como sua dores referente a lesão.
+# Requisitos
 
-→ Evolução - somente existe diante de uma avaliação.
+### Funcionais
 
-## Requisitos funcionais e não funcionais
+**→RF_001:** A captura deve ser diante de tratamentos cadastrados no sistema.
 
-### Requisitos funcionais
+→**RF_002:** Base de dados previamente populada.
 
+→**RF_003:** IA deve processar as patologias do paciente e retornando os tratamentos qualificados.
 
-⇒ RF_001: Deve ser possível cadastrar funcionários.
+### Não funcionais
 
-⇒ RF_002: Deve ser possível cadastrar pacientes.
+**RNF_001:** Treinamento com rede neural
 
-⇒ RF_003: Os sistema deve conter listagens para todos os tipos de cadastro associados ao paciente e funcionários.
+**RNF_002:** Utilização de python ou java
 
-⇒ RF_004: Cadastro das avaliações diante da listagem e seleção de um paciente.
+**RNF_003:** A IA deve ser capaz de produzir resultados  confiáveis
 
-⇒ RF_005: Cadastro das evoluções diante da listagem e seleção de uma avaliação relacionada a um paciente.
+**RNF_004:** Deve ter uma manutenção fácil
 
-⇒ RF_006: Associações entre avaliações e evoluções com o funcionário e paciente da operação.
+**RNF_005:** Se adaptar a novos dados na base 
 
-⇒ RF_007: Roles para separar acessos no sistema entre operantes do sistema.
+---
 
-⇒ RF_008: Login e Cadastro de usuário do sistema.
+# Diagrama de classe
 
-⇒ RF_009: Validação na autenticação com token de 18 horas 
+![DRE -_  CRV - Centro Integrado de Fisioterapia.drawio.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1ee2edf3-08de-4554-b71b-c75a24f53f25/DRE_-___CRV_-_Centro_Integrado_de_Fisioterapia.drawio.png)
 
+# Tecnologias utilizadas
 
+Para popular a base de dados para o projeto principal temos outros dois projetos auxiliares
 
-### Requisitos não funcionais
+### FrontEnd
 
-⇒ RNF_001: Cadastro, listagem ou vínculo de procedimentos de serviço.
+Projeto em angular utilizado como interface para cadastro de formularios
 
-⇒ RNF_002: Validação externa com identificação de terceiros referente ao convênio.
+### BackEnd
 
-⇒ RNF_003: Somatória de todos os cliente ativos, avaliações e evoluções.
+Projeto Java utilizado para comunicação com a base de dados, salvando-os para manipularmos posteriormente.
+
+### Banco de dados
+
+Banco de dados relacional PostgreSQL
+
+### Inteligência artificial
+
+Iremos utilizar java ou python
+
+## Boas práticas
+
+- Clean code
+    - SOLID
+    - DRY code
+- Criação de testes unitarios com framework
+- Banco de dados Dockerizado
