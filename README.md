@@ -38,7 +38,7 @@ Neste projeto, temos como objetivo desenvolver a “Nora” com o algoritimo de 
 
 # Pipeline
 
-https://imgur.com/a/dk3sTfo
+![pipeline](https://imgur.com/a/dk3sTfo)
 
 
 # Tecnologias utilizadas
